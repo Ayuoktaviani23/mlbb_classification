@@ -13,7 +13,7 @@ death = st.slider("Jumlah Death",0,20)
 turret = st.slider("Jumlah Turret",0,20)
 
 if st.button("Prediksi"):
-	data_baru = pd.DataFrame([[kill,asisst,death,turet]], columns=["kill","asisst","death","turret"])
+	data_baru = pd.DataFrame([[kill,asisst,death,turret]], columns=["kill","asisst","death","turret"])
 	hasil = model.predict(data_baru)[0]
 	if hasil == "penyerang":
 		st.success(f"Hasil Prediksinya : {hasil}")
@@ -21,5 +21,6 @@ if st.button("Prediksi"):
 		st.error(f"Hasil Prediksinya : {hasil}")
 	
 	st.balloons()
+
 
 st.caption("Dibuat dengan :skull: dan :fire: oleh Ayu Oktaviani")
